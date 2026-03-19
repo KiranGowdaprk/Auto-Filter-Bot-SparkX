@@ -131,6 +131,16 @@ async def get_banned(client, message):
     else:
         await message.reply_text(text)
 
+@Client.on_callback_query(filters.regex(r'^broadcast_cancel'))
+async def broadcast_cancel(bot, query):
+    _, target = query.data.split("#", 1)
+    if target == 'users':
+        temp.B_USERS_CANCEL = True
+        await query.message.edit("🛑 ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴜꜱᴇʀꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ...")
+    elif target == 'groups':
+        temp.B_GROUPS_CANCEL = True
+        await query.message.edit("🛑 ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ɢʀᴏᴜᴘꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ...")
+
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.private)
 async def broadcast_users(bot, message):
     if not message.reply_to_message:
@@ -200,8 +210,7 @@ async def broadcast_users(bot, message):
         f"🗑️ Deleted: <code>{deleted}</code>\n"
         f"❌ Failed: <code>{failed}</code>"
     )
-    await techifybots_status_msg.delete()
-    await message.reply(final_status)
+    await techifybots_status_msg.edit(final_status)
 
 @Client.on_message(filters.command("grp_broadcast") & filters.user(ADMINS) & filters.private)
 async def broadcast_group(bot, message):
@@ -265,16 +274,6 @@ async def broadcast_group(bot, message):
             outfile.write(str(failed))
         await message.reply_document("reason.txt", caption=final_status)
         os.remove("reason.txt")
-
-@Client.on_callback_query(filters.regex(r'^broadcast_cancel'))
-async def broadcast_cancel(bot, query):
-    _, target = query.data.split("#", 1)
-    if target == 'users':
-        temp.B_USERS_CANCEL = True
-        await query.message.edit("🛑 ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴜꜱᴇʀꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ...")
-    elif target == 'groups':
-        temp.B_GROUPS_CANCEL = True
-        await query.message.edit("🛑 ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ɢʀᴏᴜᴘꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ...")
 
 @Client.on_message(filters.command("clear_junk") & filters.user(ADMINS))
 async def remove_junkuser__db(bot, message):
