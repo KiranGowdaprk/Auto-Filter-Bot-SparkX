@@ -38,7 +38,7 @@ CHANNEL_LINK = environ.get('CHANNEL_LINK', 'https://t.me/MR_Tech_Officiall')
 GROUP_LINK = environ.get('GROUP_LINK', 'https://t.me/SparkX_MRTech')
 
 DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "filter")
+DATABASE_NAME = environ.get('DATABASE_NAME', "SMS_Movies")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'files')
 MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "False"), False)
 DATABASE_URI2 = environ.get('DATABASE_URI2', "")
