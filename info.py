@@ -14,37 +14,37 @@ def is_enabled(value, default):
         return default
 
 SESSION = environ.get('SESSION', 'techifybots')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', "")
+API_ID = int(environ.get('API_ID', '35057086'))
+API_HASH = environ.get('API_HASH', '344c241bb482993a8b318848421319f3')
+BOT_TOKEN = environ.get('BOT_TOKEN', "8797721372:AAF7DzRgrT2larpcZpoaTjx7A1RxDPm-n0Y")
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 INDEX_CAPTION = bool(environ.get('INDEX_CAPTION', False))
 COVER = bool(environ.get('COVER', False))
 PICS = (environ.get('PICS', 'https://i.ibb.co/PzZNZHF6/IMG-20251116-113905-254.jpg https://i.ibb.co/8npWSZ5T/pic.jpg')).split()
 MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://i.ibb.co/2769f1rF/photo-2025-09-03-14-48-34-7548400762112442372.jpg")
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7811733658').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL', ''))
-PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', ''))
-DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '').split()]
-AUTH_CHANNELS = [int(ch) for ch in environ.get("AUTH_CHANNELS", "").split() if ch and id_pattern.match(ch)]
-AUTH_REQ_CHANNELS = [int(ch) for ch in environ.get("AUTH_REQ_CHANNELS", "").split() if ch and id_pattern.match(ch)]
-REQST_CHANNEL = int(ch) if (ch := environ.get("REQST_CHANNEL", "")) and id_pattern.search(ch) else None
-SUPPORT_CHAT_ID = int(ch) if (ch := environ.get("SUPPORT_CHAT_ID", "")) and id_pattern.search(ch) else None
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003879025493').split()]
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003830765716'))
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003794376008'))
+PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1003389032197'))
+DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-1003777294149').split()]
+AUTH_CHANNELS = [int(ch) for ch in environ.get("AUTH_CHANNELS", "-1003786228829").split() if ch and id_pattern.match(ch)]
+AUTH_REQ_CHANNELS = [int(ch) for ch in environ.get("AUTH_REQ_CHANNELS", "-1003715330284").split() if ch and id_pattern.match(ch)]
+REQST_CHANNEL = int(ch) if (ch := environ.get("REQST_CHANNEL", "-1003626780031")) and id_pattern.search(ch) else None
+SUPPORT_CHAT_ID = int(ch) if (ch := environ.get("SUPPORT_CHAT_ID", "-1003835943477")) and id_pattern.search(ch) else None
 
 OWNER = int(os.environ.get("OWNER", "7811733658"))
 CHANNEL_LINK = environ.get('CHANNEL_LINK', 'https://t.me/MR_Tech_Officiall')
 GROUP_LINK = environ.get('GROUP_LINK', 'https://t.me/SparkX_MRTech')
 
-DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Devil:Devil01@cluster0.ubtq55d.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "SMS_Movies")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'files')
 MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "False"), False)
 DATABASE_URI2 = environ.get('DATABASE_URI2', "")
 
 UPDATE_NOTIFICATION = bool(environ.get('UPDATE_NOTIFICATION', False))
-UPDATE_CHANNEL = int(environ.get('UPDATE_CHANNEL', ''))
+UPDATE_CHANNEL = int(environ.get('UPDATE_CHANNEL', '-1001301597448'))
 IMAGE_FETCH = bool(environ.get('IMAGE_FETCH', True))
 LINK_PREVIEW = bool(environ.get('LINK_PREVIEW', False))
 ABOVE_PREVIEW = bool(environ.get('ABOVE_PREVIEW', False))
@@ -53,7 +53,7 @@ TMDB_POSTER = bool(environ.get('TMDB_POSTER', True))
 LANDSCAPE_POSTER = bool(environ.get('LANDSCAPE_POSTER', True))
 
 IS_VERIFY = is_enabled('IS_VERIFY', False)
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', ''))
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1003595418056'))
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://i.ibb.co/xqNtSMpS/photo-2025-09-18-15-24-38-7551450511015149572.jpg")
 TUTORIAL = environ.get("TUTORIAL", "https://youtube.com/shorts/b0ynxP9Ybfc")
 TUTORIAL_2 = environ.get("TUTORIAL_2", "https://youtube.com/shorts/b0ynxP9Ybfc")
