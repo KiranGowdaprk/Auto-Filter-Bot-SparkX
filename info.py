@@ -22,7 +22,7 @@ INDEX_CAPTION = bool(environ.get('INDEX_CAPTION', False))
 COVER = bool(environ.get('COVER', False))
 PICS = (environ.get('PICS', 'https://i.ibb.co/PzZNZHF6/IMG-20251116-113905-254.jpg https://i.ibb.co/8npWSZ5T/pic.jpg')).split()
 MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://i.ibb.co/2769f1rF/photo-2025-09-03-14-48-34-7548400762112442372.jpg")
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8528323576').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7811733658').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003879025493').split()]
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003830765716'))
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003794376008'))
@@ -33,7 +33,7 @@ AUTH_REQ_CHANNELS = [int(ch) for ch in environ.get("AUTH_REQ_CHANNELS", "-100371
 REQST_CHANNEL = int(ch) if (ch := environ.get("REQST_CHANNEL", "-1003626780031")) and id_pattern.search(ch) else None
 SUPPORT_CHAT_ID = int(ch) if (ch := environ.get("SUPPORT_CHAT_ID", "-1003835943477")) and id_pattern.search(ch) else None
 
-OWNER = int(os.environ.get("OWNER", "8528323576"))
+OWNER = int(os.environ.get("OWNER", "7811733658"))
 CHANNEL_LINK = environ.get('CHANNEL_LINK', 'https://t.me/MR_Tech_Officiall')
 GROUP_LINK = environ.get('GROUP_LINK', 'https://t.me/SparkX_MRTech')
 
